@@ -158,39 +158,7 @@
             transform: translateY(-2px);
         }
 
-        .news-ticker {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--ncc-blue);
-    height: 35px; /* Slimmer bar */
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-}
-
-.ticker-label {
-    background: var(--india-saffron);
-    padding: 0 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 0.6rem; /* Small font for mobile label */
-    font-weight: 900;
-    white-space: nowrap;
-    width: 100px; /* FIXED WIDTH to prevent overlapping form */
-    justify-content: center;
-}
-
-.ticker-text {
-    font-size: 0.85rem;
-    padding-left: 10px;
-}
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
+        
         
         /* CERTIFICATE SECTION */
         #certificateSection {
@@ -227,6 +195,22 @@
             nav h1 { font-size: 1.3rem; }
             .card-body { padding: 20px; }
         }
+
+        .hero-quote {
+    font-style: italic;
+    font-size: 0.9rem; /* Not too big, not too small */
+    max-width: 85%;
+    margin: 15px auto 0 auto;
+    color: #ffd1a3; /* Soft orange so it's easy on the eyes */
+    border-left: 3px solid #FF9933; /* A little orange line on the side */
+    padding-left: 12px;
+    line-height: 1.4;
+}
+
+/* This makes the blue hero box look better on phones */
+.hero {
+    padding: 30px 15px;
+}
     </style>
 </head>
 <body>
@@ -241,8 +225,9 @@
 </nav>
 
 <section class="hero">
-    <h3>Empower Women For a Viksit Bharath</h3>
+    <h3>Empower Women For a Viksit Bharat</h3>
     <p>A Commitment towards a Stronger and Empowered Nation.</p>
+    <p class="hero-quote">"I am a woman of strength, courage, and dreams. When society supports me, I help build a stronger nation."</p>
 </section>
 
 <section class="registration-section" id="register">
@@ -289,14 +274,6 @@
     </div>
 </section>
 
-<div class="news-ticker">
-    <div class="ticker-label">MESSAGE FROM A WOMAN</div>
-    <div class="ticker-text">
-        "I am a woman of strength, courage, and dreams. When society supports me, I help build a stronger and more developed nation." &nbsp;&nbsp;&nbsp;&nbsp; ● &nbsp;&nbsp;&nbsp;&nbsp; 
-        Join the NCC Alumni Unity March 2026 &nbsp;&nbsp;&nbsp;&nbsp; ● &nbsp;&nbsp;&nbsp;&nbsp;
-        "I am a woman of strength, courage, and dreams. When society supports me, I help build a stronger and more developed nation."
-    </div>
-</div>
 
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlw7Zvmad2sWO0avcM7b89MRhndGUutUhsQQNu-WlcyQRIOhsO6KiHRXBsUmStBr06/exec";
