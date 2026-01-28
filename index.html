@@ -21,38 +21,42 @@
             color: #333;
         }
 
-        /* CENTERED NAVIGATION BAR */
-        .main-header {
+        /* Optimized Header for Mobile */
+.main-header {
     background: var(--india-white);
-    padding: 15px 20px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 30px; /* Space between logos and text */
+    justify-content: space-between; /* Spreads logos to the edges */
     border-bottom: 4px solid var(--ncc-blue);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-logo {
-    height: 80px; /* Adjust size as needed */
+    height: 60px; /* Smaller for mobile */
     width: auto;
 }
 
+.header-text {
+    text-align: center;
+    flex: 1; /* Allows text to take middle space */
+}
+
 .header-text h1 {
-    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; /* Smaller text so it fits one line */
     margin: 0;
-    color: var(--ncc-blue);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
 }
 
 .header-text h2 {
-    font-family: 'Inter', sans-serif;
-    margin: 5px 0 0 0;
-    color: var(--india-green);
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 0.65rem;
+    margin-top: 2px;
+}
+
+/* For Desktop - Reset to larger sizes */
+@media (min-width: 768px) {
+    .nav-logo { height: 90px; }
+    .header-text h1 { font-size: 2rem; }
+    .header-text h2 { font-size: 1.1rem; }
+    .main-header { justify-content: center; gap: 40px; }
 }
         /* HERO SECTION */
         .hero {
@@ -155,37 +159,35 @@
         }
 
         .news-ticker {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--ncc-blue);
-            color: white;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            z-index: 1000;
-        }
-        .ticker-label {
-            background: var(--india-saffron);
-            color: white;
-            padding: 0 20px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            z-index: 3;
-        }
-        .ticker-text {
-            white-space: nowrap;
-            padding-left: 100%;
-            animation: marquee 25s linear infinite;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--ncc-blue);
+    color: white;
+    height: 40px; /* Slimmer bar */
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.ticker-label {
+    background: var(--india-saffron);
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem; /* Smaller font */
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 5;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.2);
+}
+
+.ticker-text {
+    font-size: 0.9rem;
+    padding-left: 20px; /* Space after the label */
+}
         @keyframes marquee {
             0% { transform: translate(0, 0); }
             100% { transform: translate(-100%, 0); }
