@@ -390,6 +390,7 @@ function downloadCert() {
         link.download = `NCC_Pledge_Certificate.png`;
         link.href = canvas.toDataURL("image/png");
         link.click();
+        setTimeout(() => { window.location.href = "https://www.instagram.com/ncc_gpa_"; }, 1000);
     } catch (err) {
         alert("Browser Security Block: Please upload this code to GitHub Pages or use a local server to enable the download feature.");
         console.error(err);
