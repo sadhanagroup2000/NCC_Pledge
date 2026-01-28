@@ -164,7 +164,6 @@
     left: 0;
     width: 100%;
     background: var(--ncc-blue);
-    color: white;
     height: 35px; /* Slimmer bar */
     display: flex;
     align-items: center;
@@ -173,19 +172,20 @@
 
 .ticker-label {
     background: var(--india-saffron);
-    padding: 0 8px; /* Tightened padding */
+    padding: 0 10px;
     height: 100%;
     display: flex;
     align-items: center;
-    font-size: 0.65rem; /* Smaller font */
+    font-size: 0.6rem; /* Small font for mobile label */
     font-weight: 900;
     white-space: nowrap;
-    z-index: 5;
+    width: 100px; /* FIXED WIDTH to prevent overlapping form */
+    justify-content: center;
 }
 
 .ticker-text {
-    font-size: 0.8rem;
-    animation: marquee 20s linear infinite;
+    font-size: 0.85rem;
+    padding-left: 10px;
 }
         @keyframes marquee {
             0% { transform: translate(0, 0); }
