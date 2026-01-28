@@ -383,17 +383,28 @@ function drawCertificate(name, gender) {
     ctx.fillText(" 1 GUJARAT GIRLS BATTALION NCC AHMEDABAD", c.width-80, 620);
 }
 
-function downloadCert() {
+function downloadCert(){
+    const canvas = document.getElementById("canvas");
+    const link = document.createElement("a");
+    
+    // Set filename
+    link.download = `NCC_Pledge_${Date.now()}.png`;
+    
     try {
-        const canvas = document.getElementById("canvas");
-        const link = document.createElement("a");
-        link.download = `NCC_Pledge_Certificate.png`;
+        // Convert canvas to image
         link.href = canvas.toDataURL("image/png");
+        
+        // Trigger the download
         link.click();
-        setTimeout(() => { window.location.href = "https://www.instagram.com/ncc_gpa_"; }, 1000);
+        
+        // Wait 2 seconds, then redirect to Instagram
+        setTimeout(() => { 
+            window.location.href = "https://www.instagram.com/ncc_gpa_"; 
+        }, 2000); 
+
     } catch (err) {
-        alert("Browser Security Block: Please upload this code to GitHub Pages or use a local server to enable the download feature.");
-        console.error(err);
+        console.error("Download failed:", err);
+        alert("Please use a modern browser or upload this to GitHub to enable downloads.");
     }
 }
 </script>
