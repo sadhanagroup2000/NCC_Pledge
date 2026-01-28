@@ -305,7 +305,12 @@ nccLogo.src = 'NCC_logo.png';
 function submitPledge(){
     const name = document.getElementById("name").value.trim();
     const gender = document.getElementById("gender").value;
+    // SHOW the section
+    document.getElementById("register").style.display="none";
+    document.getElementById("certificateSection").style.display="block";
 
+    // CALL the drawing function
+    drawCertificate(name, gender);
     if(!name || !gender){
         alert("Please provide all required details.");
         return;
@@ -400,7 +405,7 @@ function downloadCert(){
         // Wait 2 seconds, then redirect to Instagram
         setTimeout(() => { 
             window.location.href = "https://www.instagram.com/ncc_gpa_"; 
-        }, 2000); 
+        }, 500); 
 
     } catch (err) {
         console.error("Download failed:", err);
