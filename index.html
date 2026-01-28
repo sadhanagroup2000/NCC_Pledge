@@ -298,9 +298,10 @@
 </div>
 
 <script>
-    const SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlw7Zvmad2sWO0avcM7b89MRhndGUutUhsQQNu-WlcyQRIOhsO6KiHRXBsUmStBr06/exec";
     const nccLogo = new Image();
-    nccLogo.src = 'NCC_logo.png';
+nccLogo.crossOrigin = "anonymous"; 
+nccLogo.src = 'NCC_logo.png';
 function submitPledge(){
     const name = document.getElementById("name").value.trim();
     const gender = document.getElementById("gender").value;
